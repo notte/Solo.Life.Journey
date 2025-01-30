@@ -1,0 +1,147 @@
+<!DOCTYPE html><html lang="en"> <head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>從設計到程式 #1 轉型的第一步</title><meta name="description" content="I've stayed in my comfort zone; now it's time to step out."><meta name="author" content="Thora"><meta property="og:title" content="從設計到程式 #1 轉型的第一步"><meta property="og:description" content="I've stayed in my comfort zone; now it's time to step out."><meta property="og:url" content="blog url"><meta property="og:image" content="blog view img"><link rel="sitemap" href="/sitemap-index.xml"><link rel="alternate" type="application/rss+xml" href="/rss.xml"><link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🛠️</text></svg>"><script type="module">localStorage.getItem("dark-mode")==="true"||!("dark-mode"in localStorage)&&window.matchMedia("(prefers-color-scheme: dark)").matches?(localStorage.setItem("dark-mode","true"),document.querySelector("html")?.classList.add("dark")):(localStorage.setItem("dark-mode","false"),document.querySelector("html")?.classList.remove("dark"));</script><link rel="stylesheet" href="/_astro/index.BDLbNO-f.css">
+<style>.content pre{background-color:#cdc8ff0d;border-radius:.5rem;font-size:.9rem}.content code{overflow-x:auto}.content [data-rehype-pretty-code-figure] code{padding:0!important}.content pre>code span[data-line]{border-left:.5rem solid transparent;padding:0 .5rem}.content pre>code span:first-of-type{border-top-left-radius:.5rem;border-top-right-radius:.5rem;padding-top:.5rem}.content pre>code span:last-of-type{border-bottom-left-radius:.5rem;border-bottom-right-radius:.5rem;padding-bottom:.5rem}.content pre>code .highlighted{border-left:.5rem solid rgba(209,213,219,.6)!important;background-color:#e5e7eb0d}.content pre>code[data-line-numbers]{counter-reset:line}.content pre>code[data-line-numbers]>span[data-line]:before{counter-increment:line;content:counter(line);display:inline-block;margin-right:2rem;width:1rem;text-align:left;color:#7ca2dfad}.content pre>code>span[data-line]:before{content:"";display:inline-block;width:1rem;text-align:right}.content pre>code[data-line-numbers-max-digits="2"]>span[data-line]:before{width:2rem}.content code[data-line-numbers-max-digits="3"]>span[data-line]:before{width:3rem}
+</style><script>window.va = window.va || function () { (window.vaq = window.vaq || []).push(arguments); };
+		var script = document.createElement('script');
+		script.defer = true;
+		script.src = '/_vercel/insights/script.js';
+		var head = document.querySelector('head');
+		head.appendChild(script);
+	</script></head> <body class="flex min-h-screen flex-col bg-stone-100 font-mono text-gray-950 dark:bg-stone-900 dark:text-white"> <div class="mx-auto w-full max-w-screen-lg p-10">  <div class="flex justify-between"> <div class="md:text-2xl font-bold flex items-center"> <a href="/" class="text-teal-700">Solo.Life.Journey</a> </div> <div class="flex items-center"> <nav> <ul class="flex-row flex"> <li> <a href="/tags" class="mr-5 hover:text-teal-700">Tags</a> </li> <li> <a href="/posts" class="hover:text-teal-700">Blog</a> </li> </ul> </nav> <div class="ml-5 flex flex-col justify-center"> <input type="checkbox" id="light-switch" class="light-switch sr-only"> <label class="tada relative cursor-pointer p-2" for="light-switch"> <svg class="dark:hidden" width="16" height="16" xmlns="http://www.w3.org/2000/svg"> <path class="fill-stone-800" d="M7 0h2v2H7zM12.88 1.637l1.414 1.415-1.415 1.413-1.413-1.414zM14 7h2v2h-2zM12.95 14.433l-1.414-1.413 1.413-1.415 1.415 1.414zM7 14h2v2H7zM2.98 14.364l-1.413-1.415 1.414-1.414 1.414 1.415zM0 7h2v2H0zM3.05 1.706 4.463 3.12 3.05 4.535 1.636 3.12z"></path> <path class="fill-gray-900" d="M8 4C5.8 4 4 5.8 4 8s1.8 4 4 4 4-1.8 4-4-1.8-4-4-4Z"></path> </svg> <svg class="hidden dark:block" width="16" height="16" xmlns="http://www.w3.org/2000/svg"> <path class="fill-amber-500" d="M6.2 1C3.2 1.8 1 4.6 1 7.9 1 11.8 4.2 15 8.1 15c3.3 0 6-2.2 6.9-5.2C9.7 11.2 4.8 6.3 6.2 1Z"></path> <path class="fill-amber-500" d="M12.5 5a.625.625 0 0 1-.625-.625 1.252 1.252 0 0 0-1.25-1.25.625.625 0 1 1 0-1.25 1.252 1.252 0 0 0 1.25-1.25.625.625 0 1 1 1.25 0c.001.69.56 1.249 1.25 1.25a.625.625 0 1 1 0 1.25c-.69.001-1.249.56-1.25 1.25A.625.625 0 0 1 12.5 5Z"></path> </svg> <span class="sr-only">Switch to light / dark version</span> </label> </div> </div> </div>  </div> <script type="module">const t=document.querySelectorAll(".light-switch");t.length>0&&t.forEach((e,c)=>{localStorage.getItem("dark-mode")==="true"&&(e.checked=!0),e.addEventListener("click",()=>{const{checked:d}=e;t.forEach((o,a)=>{a!==c&&(o.checked=d)}),e.checked?(document.documentElement.classList.add("dark"),localStorage.setItem("dark-mode","true")):(document.documentElement.classList.remove("dark"),localStorage.setItem("dark-mode","false"))})});</script> <div class="flex-1">  <div class="mx-auto w-full max-w-screen-md"> <div class="mx-auto w-full max-w-screen-lg p-10">  <div class="flex flex-col items-center"> <p class="leading-snug pb-4 pt-6 text-center text-4xl font-bold text-stone-700 dark:text-stone-300"> 從設計到程式 #1 轉型的第一步 </p> <div class="pb-4"> <div class="flex flex-wrap"> <a href="/tags/設計師轉工程師"><span class="mb-2 mr-2 rounded-xl bg-stone-600 px-3 py-1 text-xs font-bold uppercase text-white hover:bg-stone-500">
+#設計師轉工程師 </span></a><a href="/tags/非本科轉職工程師"><span class="mb-2 mr-2 rounded-xl bg-stone-600 px-3 py-1 text-xs font-bold uppercase text-white hover:bg-stone-500">
+#非本科轉職工程師 </span></a><a href="/tags/轉職前端工程師"><span class="mb-2 mr-2 rounded-xl bg-stone-600 px-3 py-1 text-xs font-bold uppercase text-white hover:bg-stone-500">
+#轉職前端工程師 </span></a><a href="/tags/自學轉職工程師"><span class="mb-2 mr-2 rounded-xl bg-stone-600 px-3 py-1 text-xs font-bold uppercase text-white hover:bg-stone-500">
+#自學轉職工程師 </span></a> </div> </div> <div class="text-sm"> <span>Thu, January 30, 2025</span> - <span>13 min read</span> </div>  </div>  </div> <div class="mx-auto w-full max-w-screen-lg p-10">  <div class="content prose mt-8 max-w-none text-base leading-8 text-black dark:prose-invert prose-code:rounded-lg prose-code:bg-stone-800 prose-code:p-1 prose-code:text-amber-700 prose-img:rounded-lg prose-img:shadow-xl dark:text-white prose-img:dark:shadow-stone-800"> <h3 id="寫在前面">寫在前面</h3>
+<p>這一系列文章，目的是記錄轉職經歷而不是學習指南。<br>
+主要是我個人這段時間的心態變化與想法的紀錄。<br>
+<strong>不能作為一個轉職前端的路線參考。</strong></p>
+<p>但看完這系列的文章，讀者能得到什麼呢？<br>
+我希望是一個方向。</p>
+<p>如果正在迷惘是否要轉換跑道，看完文章能有點心得，那就太好了。</p>
+<hr>
+<h2 id="個人背景">個人背景</h2>
+<p>高職然後科大設計系畢業，將近十年的<strong>美術設計類產線</strong>工作。<br>
+就是指沒有任何決定權的美術，照表操課的那種出圖產線工。</p>
+<p>邏輯能力可以當作沒有，英文幾乎只認識大小寫字母。<br>
+2019 開始邊工作邊自學，歷經五年轉職前端工程師。</p>
+<blockquote>
+<p>想轉職的原因：改善經濟。</p>
+</blockquote>
+<p>背景與轉職動機，因為是寫文章想說還是得入境隨俗一下。<br>
+不過每個人際遇不同，我覺得重點是在<strong>開啟改變的念頭</strong>是否足夠強烈。</p>
+<h2 id="目標選擇">目標選擇</h2>
+<img src="https://res.cloudinary.com/dfqferpcv/image/upload/c_crop,x_250,y_200,h_400,w_1000/v1735614274/blog/vhxzd0qnvhgewoepmlrt.jpg" alt="">
+<p>「前端」的職務範圍其實並非一致，職稱也可能會稍有不同。<br>
+最快速有效的方法就是看職缺，推薦直接看自己想要的職缺。</p>
+<p>這裡指的差別不是說前端技術用的不同，而是<strong>類型就不一樣</strong>；<br>
+主要可以分為三種：</p>
+<ol>
+<li>設計，純粹的<strong>視覺</strong>畫面。</li>
+<li>切版，將視覺圖<strong>以網頁呈現。</strong></li>
+<li>邏輯，使用者操作產生的網頁<strong>行為。</strong></li>
+</ol>
+<p><span class="text-gray-500">細部還可以再切分出負責操作行為這塊的職位，但這邊先不討論。</span></p>
+<p>我看過 1+2、1+2+3、2+3 這幾種排列組合；我自己是從設計師跳到做 2+3 的工程師。<br>
+當然這部分會有多方說法，也看過堅持前端工程師應該只做 3 的部分。</p>
+<p>因為落差很大，所以主要也看自己想著重在哪些部分。<br>
+我是因為非常想脫離純視覺的工作，所以一開始目標就是放在 2+3 的前端工程師。</p>
+<p>可以參考目標職缺要求的職務責任、工具技術來安排，專攻重點。<br>
+或者是按照感興趣程度，決定<strong>學習以及求職的優先順序。</strong></p>
+<p>但同樣的，也會有掛羊頭賣狗肉的工作，職場常見的神秘事件。<br>
+面試時說 A 但報到後做 B，這是另外一個風險。</p>
+<p>我自己是碰到：面試時說做 1+2+3，實際工作是 1+2，並且佔比是 99:1。<br>
+職稱還是「前端工程師」，只能說真的是哭笑不得。</p>
+<p>做設計時期也碰過做一做，要求我做客服的(真的要接電話)。🫠</p>
+<h2 id="付出成本">付出成本</h2>
+<p>不外乎就是：</p>
+<ul>
+<li>錢</li>
+<li>電腦</li>
+<li>網路</li>
+<li>時間</li>
+<li>走下去的心力</li>
+</ul>
+<p>想要改變現狀，可以先從認知範圍內的其他工作中做選擇。</p>
+<p>譬如在自己現職公司轉換部門、或者在身邊親友中互相引渡下一個機會。<br>
+不過這類的工作多半差異都不大，可以說都還在同個圈子裡轉來轉去。</p>
+<p>即使是要引薦，通常也不會在一張白紙的情況下就推薦人選。<br>
+尤其對於大多要求即戰力的社會來說更是如此。</p>
+<p><span class="text-gray-500">但我認為有些要求即戰力不是指說要有工作經驗，而是職缺要求的專業必須要有涉獵。<br>
+尤其越新的技術市場佔有率更低，之前碰過要人力只能等學生畢業的情況XD</span></p>
+<p>所以想要突破瓶頸，我認為需要<span class="text-rose-700 font-semibold">擴大知識範圍，增加自己的籌碼。</span></p>
+<p>我是個學習能力一般的普通人，經濟能力也不寬裕。<br>
+在我腦袋還不開竅、還是僵化時期(?)的時候，<span class="text-gray-500">（當時也還沒有打算轉職工程師）</span><br>
+網路上看到進修課程，直接就砸了五位數去上課。</p>
+<p>不是什麼奇怪的門路，也是很正經的上課；<br>
+但我的成效不彰，並且這幾乎抽乾了本來就為數不多的存款。</p>
+<blockquote>
+<p>過去選擇少、現在多，價格範圍變廣；但如何選擇的問題依舊是不變的；務必謹慎思考。</p>
+</blockquote>
+<p>其實，我認為坊間的速成班是很看個人的學習水平，偏偏這就是當時的我的極大弱點。</p>
+<ol>
+<li>學習能力本身就不突出。</li>
+<li>長年非動腦的求學經歷與職場環境。</li>
+<li>基本上資歷累積的是肌肉記憶，而美感見仁見智。</li>
+</ol>
+<p>簡單來說就是已經僵化到不行的腦袋，但程式開發是一件很「活」的事情。<br>
+所以我自己思考過後的籌碼就只剩下四個：尤其是花加倍的時間以及加倍的心力去補足。</p>
+<p>其中我全自學的最大困境，就是<strong>沒有經過規劃的學習，有很高的機率踩更多坑。</strong><br>
+這也是我支出成本最大的地方，留到之後的文章再講。🥹</p>
+<h3 id="盡可能地了解自己">盡可能地了解自己</h3>
+<p>所以，如果已經有做出不同選擇的念頭時，<strong>第一件事要做什麼？</strong><br>
+<span class="text-rose-700 font-semibold">我認為是「釐清自己」。</span></p>
+<p>不是從旁人的眼中，而是從自己的角度去看：<strong>我，想要什麼？</strong><br>
+不站在社會、或者親朋好友的立場；甚至跳脫環境，去直視自己的本心。</p>
+<p>我曾經走的美術設計之路，是來自於親友以及環境影響。<br>
+但我其實很早就發現，自己沒有這方面的熱忱。</p>
+<p><strong>人並不會因為單純的年歲增長，就變得更加了解自己。</strong></p>
+<p>在此之前，我根本從未想過有這麼一天，也肯定不會相信。<br>
+我本以為自己一輩子都會拿著畫筆的。</p>
+<p>原本依賴著將近三十年的舒適圈，現在回頭去看已經陌生的不可思議。</p>
+<hr>
+<h2 id="切割有毒的人事物"><span class="text-rose-700 font-semibold text-xl">切割有毒的人事物</span></h2>
+<p>在翻各種轉換跑道的討論時，常常看到一個觀點————</p>
+<blockquote>
+<p>會寫出來分享的都是倖存者偏差，實際上失敗的人根本無法估計、多半也不會說出來。<br>
+所以導致一堆人前仆後繼進入某個產業，但實際上只是跳入火坑罷了。</p>
+</blockquote>
+<p>很常出現在諮詢跳轉跑道的文章中。</p>
+<p>去翻前人經驗不是什麼奇怪的事，不如說這是進入未知產業的本能。<br>
+類似翻歷屆考古題那種概念；因為希望能夠從前人的成功經驗中尋找東西來複製。</p>
+<p>報他報過的課程、學他學的技術、看他看過的書；這是再自然不過的事。</p>
+<p>但我還記得當時作為完全一張白紙、看各種過來人的文章時，第一個想法是：<br>
+<span class="text-rose-700 font-semibold">這樣的故事，完全不適合作為我的借鏡；我無法做同等或相近的付出。</span></p>
+<p>當時看的轉職成功案例，不是密集去報課程、就是本身有學習底子的。<br>
+或者是看技術文章時，是用筆者本來就會的某技術來講解前端，越看越不懂XD</p>
+<p>但考古題終究是考古題，時代會變、每個人的吸收能力也有差別。</p>
+<p>像我這類<span class="text-gray-500">（高職+文組設計系+工作十年思考僵化+沒錢）</span>的人；<br>
+在我當時爬文的記憶中，可以說是沒有見過。</p>
+<p>如果我去借鏡網路上的經驗在自己身上模仿，光是第一關錢我就跨不過去。<br>
+這是個人條件上本來就有的差距，每個人的籌碼本就不同；而正視這件事也非常重要。</p>
+<p>這個路無法走，那就走出另外一條自己的路來。</p>
+<h3 id="不舒適的舒適圈">不舒適的舒適圈</h3>
+<img src="https://res.cloudinary.com/dfqferpcv/image/upload/c_crop,g_south,h_400,w_1000/v1735614274/blog/vhxzd0qnvhgewoepmlrt.jpg" alt="">
+<p><span class="text-rose-700 font-semibold">時間是有限的，人的情緒容量也是。</span><br>
+無論是長久學習的心力，或者面對周遭時的抵抗力。<br>
+踏出去本來就不容易，有時候走到越後面、往往只剩下自己一個人。</p>
+<p><span class="text-rose-700 font-semibold text-xl">如何面對壓力之下的孤獨？<br>
+被原有的生活絆住、甚或者被冷嘲熱諷，該如何堅持自己？
+</span></p>
+<p>我相信這類的故事真的是再常見不過了，但輪到自己時該如何面對，是需要<strong>事先思考</strong>的問題。</p>
+<p>想待在舒適圈並不會有什麼對錯；<strong>並非一定要努力、上進、變有錢、被崇拜，才是所謂的成功。</strong><br>
+但如果嚮往著認知之外的世界，就難以再做與過去同樣的選擇，很有可能繞回原點。</p>
+<p>對目標的慾望越強烈、對圈外的認知更多更廣，<br>
+就越會感受到————改變必然得付出代價，甚至會需要放棄掉什麼。</p>
+<hr>
+<h2 id="結語">結語</h2>
+<p>所以對我來說，「有毒」並非只有指惡意的表現。<br>
+親朋好友的關心可能是毒也可能是藥，過來人的經驗同樣也是。</p>
+<p>我認為拿<strong>與自己條件相差懸殊的例子</strong>來批判自己，是最大的毒。<br>
+或者說現實群體或網路社群上的比較心態，就是最要不了的東西。<br>
+<span class="text-gray-500">不過我感覺這是一種網路現象了⋯⋯</span></p>
+<p>寫得很雜，因為人心本身就太複雜了；要考慮的事情太多、影響的因素太多。<br>
+換工作本身就需要評估，轉換跑道更是要經歷過幾番交戰。<br>
+甚至可能像我一樣變成長期抗戰XD</p>
+<p>希望我這系列文章不要變成老一輩在說教🥹<br>
+因為我也不過就是一個，不甘賠上自己人生的普通人而已。</p> </div>  </div>  </div>  </div> <div class="mx-auto w-full max-w-screen-lg p-10">  <footer class="text-center">
+© 2025 ♥️ with Thora | Designed by
+<a href="https://www.nicdun.dev" target="_blank" rel="noopener">Nicolas</a> </footer>  </div> </body></html>
