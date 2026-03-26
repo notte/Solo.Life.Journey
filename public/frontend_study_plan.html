@@ -1,0 +1,659 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<meta charset="UTF-8">
+<title>資深前端面試準備計畫</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300;400;500;700&family=JetBrains+Mono:wght@400;600&display=swap');
+
+  :root {
+    --bg: #0f1117;
+    --surface: #16181f;
+    --surface2: #1e2130;
+    --border: #2a2d3e;
+    --accent: #5b8dee;
+    --accent2: #3ecf8e;
+    --accent3: #f7c948;
+    --accent4: #e05c5c;
+    --text: #e2e4ed;
+    --text-muted: #7b7f96;
+    --text-dim: #4a4e65;
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    font-family: 'Noto Sans TC', sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    line-height: 1.75;
+    padding: 48px 24px;
+    max-width: 860px;
+    margin: 0 auto;
+  }
+
+  /* Header */
+  .header {
+    margin-bottom: 56px;
+  }
+  .header-tag {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px;
+    letter-spacing: 0.18em;
+    color: var(--accent);
+    text-transform: uppercase;
+    margin-bottom: 12px;
+  }
+  .header h1 {
+    font-size: 32px;
+    font-weight: 700;
+    line-height: 1.3;
+    margin-bottom: 12px;
+  }
+  .header p {
+    color: var(--text-muted);
+    font-size: 14px;
+    max-width: 520px;
+  }
+
+  /* Track header */
+  .track {
+    margin-bottom: 48px;
+  }
+  .track-label {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 24px;
+  }
+  .track-badge {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 10px;
+    letter-spacing: 0.12em;
+    padding: 3px 10px;
+    border-radius: 4px;
+    font-weight: 600;
+    text-transform: uppercase;
+  }
+  .badge-a { background: rgba(91,141,238,0.15); color: var(--accent); border: 1px solid rgba(91,141,238,0.3); }
+  .badge-b { background: rgba(62,207,142,0.12); color: var(--accent2); border: 1px solid rgba(62,207,142,0.25); }
+  .badge-c { background: rgba(247,201,72,0.12); color: var(--accent3); border: 1px solid rgba(247,201,72,0.25); }
+  .badge-d { background: rgba(224,92,92,0.12); color: var(--accent4); border: 1px solid rgba(224,92,92,0.25); }
+
+  .track-title {
+    font-size: 18px;
+    font-weight: 600;
+    color: var(--text);
+  }
+  .track-subtitle {
+    font-size: 13px;
+    color: var(--text-muted);
+    margin-left: auto;
+  }
+
+  /* Section card */
+  .section {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: 24px 28px;
+    margin-bottom: 12px;
+  }
+  .section-header {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    margin-bottom: 16px;
+    gap: 12px;
+  }
+  .section-num {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px;
+    color: var(--text-dim);
+    padding-top: 3px;
+    min-width: 24px;
+  }
+  .section-title {
+    font-size: 15px;
+    font-weight: 600;
+    flex: 1;
+  }
+  .section-pct {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 12px;
+    color: var(--text-muted);
+    background: var(--surface2);
+    padding: 2px 10px;
+    border-radius: 4px;
+    white-space: nowrap;
+  }
+
+  .items {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+  }
+  .items li {
+    font-size: 13.5px;
+    color: var(--text-muted);
+    padding-left: 16px;
+    position: relative;
+  }
+  .items li::before {
+    content: '·';
+    position: absolute;
+    left: 4px;
+    color: var(--text-dim);
+  }
+
+  /* Callout box */
+  .callout {
+    background: var(--surface2);
+    border-left: 3px solid var(--accent);
+    padding: 12px 16px;
+    border-radius: 0 6px 6px 0;
+    margin-top: 14px;
+    font-size: 13px;
+    color: var(--text-muted);
+  }
+  .callout.green { border-color: var(--accent2); }
+  .callout.yellow { border-color: var(--accent3); }
+  .callout.red { border-color: var(--accent4); }
+  .callout strong { color: var(--text); }
+
+  /* Code snippet */
+  .code-block {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 12px;
+    background: #0a0c12;
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    padding: 14px 18px;
+    margin-top: 12px;
+    color: #a8b0cc;
+    line-height: 1.8;
+  }
+  .code-block .dir { color: var(--accent); }
+  .code-block .file { color: #c8d0e8; }
+  .code-block .comment { color: var(--text-dim); }
+
+  /* Tag list */
+  .tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+    margin-top: 12px;
+  }
+  .tag {
+    font-size: 12px;
+    padding: 3px 10px;
+    border-radius: 4px;
+    background: var(--surface2);
+    border: 1px solid var(--border);
+    color: var(--text-muted);
+    font-family: 'JetBrains Mono', monospace;
+  }
+
+  /* Principle list */
+  .principle {
+    display: flex;
+    gap: 10px;
+    align-items: flex-start;
+    font-size: 13.5px;
+    color: var(--text-muted);
+    padding: 8px 0;
+    border-bottom: 1px solid var(--border);
+  }
+  .principle:last-child { border-bottom: none; }
+  .principle-icon {
+    font-size: 15px;
+    min-width: 20px;
+    padding-top: 1px;
+  }
+
+  /* Story card */
+  .story-card {
+    background: var(--surface2);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 14px 18px;
+    margin-top: 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+  }
+  .story-card .story-title {
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--text);
+  }
+  .story-card .story-flow {
+    font-size: 12px;
+    color: var(--text-muted);
+    font-family: 'JetBrains Mono', monospace;
+  }
+
+  /* Divider */
+  .divider {
+    height: 1px;
+    background: var(--border);
+    margin: 40px 0;
+  }
+
+  /* Added badge */
+  .new-badge {
+    font-size: 10px;
+    padding: 1px 7px;
+    background: rgba(224,92,92,0.15);
+    color: var(--accent4);
+    border: 1px solid rgba(224,92,92,0.3);
+    border-radius: 3px;
+    font-family: 'JetBrains Mono', monospace;
+    letter-spacing: 0.08em;
+    vertical-align: middle;
+    margin-left: 6px;
+  }
+</style>
+</head>
+<body>
+
+<div class="header">
+  <div class="header-tag">Interview Prep · TSMC Frontend Engineer</div>
+  <h1>資深前端工程師<br>面試準備計畫</h1>
+  <p>從「會寫功能」到「會設計系統」，建立穩定輸出能力。</p>
+</div>
+
+<!-- ============================================================ -->
+<!-- TRACK A -->
+<!-- ============================================================ -->
+<div class="track">
+  <div class="track-label">
+    <span class="track-badge badge-a">主線 A</span>
+    <span class="track-title">基本盤</span>
+    <span class="track-subtitle">重點是穩定講出思路，不是刷題數量</span>
+  </div>
+
+  <!-- A1 -->
+  <div class="section">
+    <div class="section-header">
+      <span class="section-num">A1</span>
+      <span class="section-title">資料結構與演算法 + 刷題</span>
+      <span class="section-pct">20%</span>
+    </div>
+    <ul class="items">
+      <li>不求看完 CS50，看得懂、說得出口就停</li>
+      <li>Easy 全通 + 常見 Medium，目標 30–35 題</li>
+      <li>每題要能回答：題目在問什麼？為什麼這樣解？時間複雜度大概是多少？</li>
+    </ul>
+    <div class="callout">
+      <strong>刷題重點不是解出來</strong>，是練習說清楚。<br>
+      每題結束後用英文說一遍：My idea is to use a hash map so we can achieve O(n) time complexity.
+    </div>
+    <div class="tags">
+      <span class="tag">Array</span>
+      <span class="tag">HashMap</span>
+      <span class="tag">Two Pointers</span>
+      <span class="tag">Sliding Window</span>
+      <span class="tag">BFS / DFS</span>
+      <span class="tag">Stack</span>
+      <span class="tag">DP（基本款）</span>
+    </div>
+  </div>
+
+  <!-- A2 -->
+  <div class="section">
+    <div class="section-header">
+      <span class="section-num">A2</span>
+      <span class="section-title">技術問答</span>
+      <span class="section-pct">10%</span>
+    </div>
+    <ul class="items">
+      <li>React rendering model（reconciliation、fiber、concurrent mode）</li>
+      <li>State lifting vs global state，決策點在哪</li>
+      <li>Next.js data flow（SSR / CSR / hydration / ISR）</li>
+      <li>React Query vs Redux 的取捨</li>
+      <li><strong>TypeScript</strong> generic、utility types、型別設計思維 <span class="new-badge">補充</span></li>
+      <li><strong>效能優化</strong>：Core Web Vitals、lazy loading、code splitting、memo/useMemo/useCallback 使用時機 <span class="new-badge">補充</span></li>
+      <li><strong>前端測試</strong>：unit / integration / e2e 的分層、Testing Library 使用思路 <span class="new-badge">補充</span></li>
+      <li><strong>打包工具</strong>：Vite 原理、tree-shaking、HMR、build optimization <span class="new-badge">補充</span></li>
+    </ul>
+  </div>
+
+  <!-- A3 -->
+  <div class="section">
+    <div class="section-header">
+      <span class="section-num">A3</span>
+      <span class="section-title">CS 基礎</span>
+      <span class="section-pct">10%</span>
+    </div>
+    <ul class="items">
+      <li>記憶體基本概念：stack / heap</li>
+      <li>Reference vs value，對 JS/TS 的實際影響</li>
+      <li>Big-O 直覺，不用背公式</li>
+      <li>Array / Object / Map / Set 的使用取捨</li>
+      <li><strong>瀏覽器原理</strong>：Event loop、call stack、microtask / macrotask、reflow / repaint <span class="new-badge">補充</span></li>
+      <li><strong>網路基礎</strong>：HTTP/1.1 vs HTTP/2、CORS、cookie / session / JWT 機制 <span class="new-badge">補充</span></li>
+      <li><strong>可訪問性（Accessibility）</strong>：WCAG 基本概念、語意化 HTML、ARIA 屬性 <span class="new-badge">補充</span></li>
+    </ul>
+  </div>
+</div>
+
+<div class="divider"></div>
+
+<!-- ============================================================ -->
+<!-- TRACK B -->
+<!-- ============================================================ -->
+<div class="track">
+  <div class="track-label">
+    <span class="track-badge badge-b">主線 B</span>
+    <span class="track-title">前端架構成熟度</span>
+    <span class="track-subtitle">從「會寫功能」變成「會設計專案」</span>
+  </div>
+
+  <!-- B1 -->
+  <div class="section">
+    <div class="section-header">
+      <span class="section-num">B1</span>
+      <span class="section-title">狀態分層訓練</span>
+    </div>
+    <p style="font-size:13.5px;color:var(--text-muted);margin-bottom:12px;">每週問自己一次：</p>
+    <ul class="items">
+      <li>哪些 state 是 UI state？（modal open、tab active）</li>
+      <li>哪些是 domain state？（user data、event list）</li>
+      <li>哪些應該 derived？（filtered list、computed total）</li>
+      <li>哪些根本不應該存在？（可直接從 props / context 拿）</li>
+    </ul>
+  </div>
+
+  <!-- B2 -->
+  <div class="section">
+    <div class="section-header">
+      <span class="section-num">B2</span>
+      <span class="section-title">分層設計能力</span>
+    </div>
+    <p style="font-size:13.5px;color:var(--text-muted);margin-bottom:12px;">練習講出這種結構，並說清楚每層的職責：</p>
+    <div class="code-block">
+<span class="dir">/features</span>
+  <span class="dir">/event</span>
+    <span class="file">eventSlice.ts</span>      <span class="comment"># state 定義、reducer</span>
+    <span class="file">eventService.ts</span>    <span class="comment"># API call、資料轉換</span>
+    <span class="file">eventSelectors.ts</span>  <span class="comment"># derived state、memo</span>
+<span class="dir">/components</span>         <span class="comment"># 純 UI，不知道 API schema</span>
+<span class="dir">/hooks</span>              <span class="comment"># 業務邏輯 + UI 的橋接</span>
+<span class="dir">/utils</span>              <span class="comment"># 純函數，無副作用</span>
+    </div>
+    <ul class="items" style="margin-top:14px;">
+      <li>API 資料轉換在哪層？（service 層）</li>
+      <li>Error handling 在哪層？（service + slice）</li>
+      <li>Cache 怎麼做？（React Query / RTK Query / 手動 TTL）</li>
+      <li>Loading state 怎麼設計？（slice status field / React Query isLoading）</li>
+    </ul>
+  </div>
+
+  <!-- B3 -->
+  <div class="section">
+    <div class="section-header">
+      <span class="section-num">B3</span>
+      <span class="section-title">邊界設計</span>
+    </div>
+    <div class="principle">
+      <span class="principle-icon">🧱</span>
+      <span>Component 不應該知道 API schema，只接收乾淨的 domain model</span>
+    </div>
+    <div class="principle">
+      <span class="principle-icon">🧱</span>
+      <span>Redux / global store 不應該知道 UI 結構（哪個 modal 開著）</span>
+    </div>
+    <div class="principle">
+      <span class="principle-icon">🧱</span>
+      <span>UI 不應該直接做資料轉換（formatting、mapping 放 util / selector）</span>
+    </div>
+    <div class="principle">
+      <span class="principle-icon">🧱</span>
+      <span><strong>系統設計延伸</strong>：能回答「設計一個可擴展的表單系統 / 元件庫」等架構題 <span class="new-badge">補充</span></span>
+    </div>
+    <div class="callout green">
+      <strong>這是區分中階與高階工程師的關鍵。</strong><br>
+      面試官問「你怎麼設計這個功能」時，你在回答的其實是邊界認知。
+    </div>
+  </div>
+
+  <!-- B4 -->
+  <div class="section">
+    <div class="section-header">
+      <span class="section-num">B4</span>
+      <span class="section-title">重構練習</span>
+    </div>
+    <p style="font-size:13.5px;color:var(--text-muted);margin-bottom:12px;">每週一次：挑一段自己過去寫的程式，問：</p>
+    <ul class="items">
+      <li>這段耦合在哪？</li>
+      <li>可否抽 service？（API 邏輯不應混在 component）</li>
+      <li>可否抽 selector？（derived state 不應每次重算）</li>
+      <li>可否去除 redundant state？</li>
+    </ul>
+    <div class="callout green">
+      <strong>這種練習的成長速度是刷題的 5 倍。</strong><br>
+      因為你在練的是工程判斷力，不是解題技巧。
+    </div>
+  </div>
+
+  <!-- B5 新增 -->
+  <div class="section">
+    <div class="section-header">
+      <span class="section-num">B5</span>
+      <span class="section-title">效能優化實作 <span class="new-badge">補充</span></span>
+    </div>
+    <ul class="items">
+      <li>React DevTools Profiler：找出不必要的 re-render</li>
+      <li>bundle analyzer：找出過大的依賴</li>
+      <li>Lighthouse / Web Vitals：LCP、CLS、FID 的優化思路</li>
+      <li>能說清楚：為什麼這裡要 memo？為什麼不要？</li>
+    </ul>
+    <div class="callout">
+      <strong>面試常考：</strong>你遇過什麼效能問題，怎麼診斷、怎麼解？
+    </div>
+  </div>
+
+  <!-- B6 新增 -->
+  <div class="section">
+    <div class="section-header">
+      <span class="section-num">B6</span>
+      <span class="section-title">CI/CD 基礎認知 <span class="new-badge">補充</span></span>
+    </div>
+    <ul class="items">
+      <li>前端如何接入 pipeline（lint → test → build → deploy）</li>
+      <li>自動化測試如何在 CI 跑</li>
+      <li>環境變數管理（.env、staging / production 分離）</li>
+      <li>不用到 DevOps 程度，但要能說清楚流程</li>
+    </ul>
+  </div>
+</div>
+
+<div class="divider"></div>
+
+<!-- ============================================================ -->
+<!-- TRACK C -->
+<!-- ============================================================ -->
+<div class="track">
+  <div class="track-label">
+    <span class="track-badge badge-c">主線 C</span>
+    <span class="track-title">輸出與表達</span>
+    <span class="track-subtitle">建立「看得懂題目，也講得出思路」的能力</span>
+  </div>
+
+  <!-- C1 -->
+  <div class="section">
+    <div class="section-header">
+      <span class="section-num">C1</span>
+      <span class="section-title">架構口述練習</span>
+    </div>
+    <p style="font-size:13.5px;color:var(--text-muted);margin-bottom:12px;">每週至少一次回答：<em>「如果讓你設計一個中型 React 專案，你會怎麼設計資料流？」</em></p>
+    <ul class="items">
+      <li>state 放在哪裡（local / global / server state）</li>
+      <li>API flow（fetch → transform → store → render）</li>
+      <li>component 分層（feature / shared / ui）</li>
+      <li>loading / error handling 策略</li>
+      <li>cache strategy（React Query TTL / invalidation / optimistic update）</li>
+    </ul>
+    <div class="callout yellow">
+      <strong>目標：可以連續講 5 分鐘不亂。</strong><br>
+      從 3 分鐘開始練，每次錄音或寫下來，找自己說不清楚的點。
+    </div>
+  </div>
+
+  <!-- C2 -->
+  <div class="section">
+    <div class="section-header">
+      <span class="section-num">C2</span>
+      <span class="section-title">演算法思路表達</span>
+    </div>
+    <p style="font-size:13.5px;color:var(--text-muted);margin-bottom:12px;">刷題後不要只寫答案，練習說出：</p>
+    <ul class="items">
+      <li>題目在問什麼（用自己的話說）</li>
+      <li>為什麼選這個解法（不是只說「我想到用 hash map」）</li>
+      <li>有沒有其他解法？各自的 trade-off？</li>
+      <li>時間複雜度 + 空間複雜度</li>
+    </ul>
+    <div class="callout">
+      <strong>練習開場句：</strong><br>
+      "My idea is to use a hash map to store visited values so we can achieve O(n) time complexity."<br><br>
+      <strong>目標：</strong>2–3 分鐘講清楚一道題的完整思路。
+    </div>
+  </div>
+
+  <!-- C3 -->
+  <div class="section">
+    <div class="section-header">
+      <span class="section-num">C3</span>
+      <span class="section-title">技術決策說明</span>
+    </div>
+    <p style="font-size:13.5px;color:var(--text-muted);margin-bottom:12px;">練習這類問題的回答：</p>
+    <ul class="items">
+      <li>為什麼用 Redux？什麼情況不用 global state？</li>
+      <li>React Query vs Redux，怎麼選？</li>
+      <li>為什麼要做 selector？不做的後果是什麼？</li>
+      <li><strong>為什麼用 TypeScript？如何設計型別邊界？</strong> <span class="new-badge">補充</span></li>
+      <li><strong>為什麼要寫測試？哪些先寫、哪些不寫？</strong> <span class="new-badge">補充</span></li>
+    </ul>
+    <div class="callout yellow">
+      <strong>回答框架：</strong>問題 → 選擇 → 原因 → trade-off<br><br>
+      例："We chose Redux because multiple pages share the same event state, and it avoids prop drilling. The trade-off is boilerplate — for simpler cases we'd use React Query instead."
+    </div>
+  </div>
+
+  <!-- C4 -->
+  <div class="section">
+    <div class="section-header">
+      <span class="section-num">C4</span>
+      <span class="section-title">專案經驗敘事</span>
+    </div>
+    <p style="font-size:13.5px;color:var(--text-muted);margin-bottom:12px;">準備 3 個故事，每個 2–3 分鐘：</p>
+
+    <div class="story-card">
+      <div class="story-title">🐛 最難的 Bug</div>
+      <div class="story-flow">背景 → 現象 → 排查過程 → 根因 → 解法 → 事後預防</div>
+    </div>
+    <div class="story-card">
+      <div class="story-title">🔨 最大的重構</div>
+      <div class="story-flow">為什麼重構 → 哪裡耦合 → 怎麼拆 → 結果（效能、維護性、測試覆蓋）</div>
+    </div>
+    <div class="story-card">
+      <div class="story-title">💡 最有價值的設計決策</div>
+      <div class="story-flow">背景 → 考慮過的選項 → 為什麼選這個 → trade-off → 結果</div>
+    </div>
+
+    <div class="callout">
+      <strong>加分項：</strong>故事裡有數字更好。<br>
+      「效能提升了 40%」比「速度變快了」有說服力。
+    </div>
+  </div>
+
+  <!-- C5 新增 -->
+  <div class="section">
+    <div class="section-header">
+      <span class="section-num">C5</span>
+      <span class="section-title">英文口說練習 <span class="new-badge">補充整合</span></span>
+    </div>
+    <ul class="items">
+      <li>目標：可工作等級（technical discussion、code review、meeting）</li>
+      <li>不需要口音完美，需要能精準表達技術思路</li>
+      <li>每次刷完題後用英文說一遍思路（2 分鐘錄音）</li>
+      <li>每週一次架構口述，用英文說（不需要全英，但要能切換）</li>
+    </ul>
+    <div class="callout">
+      <strong>重點句型練習：</strong><br>
+      "The reason I chose X is..." / "The trade-off here is..." / "This approach has O(n) time complexity because..."
+    </div>
+  </div>
+</div>
+
+<div class="divider"></div>
+
+<!-- ============================================================ -->
+<!-- TRACK D 新增 -->
+<!-- ============================================================ -->
+<div class="track">
+  <div class="track-label">
+    <span class="track-badge badge-d">主線 D</span>
+    <span class="track-title">工程品質意識 <span class="new-badge">新增主線</span></span>
+    <span class="track-subtitle">讓面試官感受到你不只是「功能實現者」</span>
+  </div>
+
+  <!-- D1 -->
+  <div class="section">
+    <div class="section-header">
+      <span class="section-num">D1</span>
+      <span class="section-title">前端測試策略</span>
+    </div>
+    <ul class="items">
+      <li>測試金字塔：unit（純函數、selector）→ integration（component + hook）→ e2e（關鍵路徑）</li>
+      <li>React Testing Library：測行為，不測實作</li>
+      <li>什麼值得測？什麼不用測？能說清楚判斷依據</li>
+      <li>MSW（Mock Service Worker）：前端 API mock 最佳實踐</li>
+    </ul>
+  </div>
+
+  <!-- D2 -->
+  <div class="section">
+    <div class="section-header">
+      <span class="section-num">D2</span>
+      <span class="section-title">打包工具理解</span>
+    </div>
+    <ul class="items">
+      <li>Vite：ESM、HMR、Rollup build 原理</li>
+      <li>Tree-shaking：為什麼有些東西 shake 不掉</li>
+      <li>Code splitting：dynamic import、route-based split</li>
+      <li>Bundle analyzer：怎麼診斷包太大的問題</li>
+    </ul>
+  </div>
+
+  <!-- D3 -->
+  <div class="section">
+    <div class="section-header">
+      <span class="section-num">D3</span>
+      <span class="section-title">可訪問性 Accessibility</span>
+    </div>
+    <ul class="items">
+      <li>WCAG 2.1 基本概念（A / AA 等級）</li>
+      <li>語意化 HTML：用對標籤比加 ARIA 更重要</li>
+      <li>鍵盤導航、focus management</li>
+    </ul>
+  </div>
+</div>
+
+<div class="divider"></div>
+
+<!-- Footer -->
+<div style="text-align:center;padding:24px 0 48px;">
+  <p style="font-family:'JetBrains Mono',monospace;font-size:11px;color:var(--text-dim);letter-spacing:0.1em;">
+    Senior Frontend Interview Prep · Updated 2026
+  </p>
+  <p style="font-size:13px;color:var(--text-dim);margin-top:8px;">
+    按計畫執行，穩定輸出比完美準備更重要。
+  </p>
+</div>
+
+</body>
+</html>
