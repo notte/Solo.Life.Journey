@@ -1,21 +1,19 @@
 ---
 interface Props {
-	href: string;
+  href: string;
+  title: string;
 }
 
-const { href } = Astro.props;
+const { href, title } = Astro.props;
 ---
 
-<div class="h-10 w-10 mr-2">
-	<a
-		href={href}
-		target="_blank"
-		class="flex h-full w-full items-center justify-center rounded-full bg-white
-		p-1
-		text-amber-500
-    	dark:bg-stone-800
-		dark:text-white"
-	>
-		<slot />
-	</a>
+<div class="md:text-sm sm:text-lg">
+  <a
+    href={href}
+    target="_blank"
+    class="inline-flex items-center gap-2 rounded-full px-4 py-2 bg-[#5e5070] text-[#f0eaf8] dark:bg-[#c4b8d4] dark:text-[#5e5070] transition-transform duration-200 hover:-translate-y-1 hover:shadow-md"
+  >
+    <slot />
+    <span>{title}</span>
+  </a>
 </div>

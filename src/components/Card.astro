@@ -1,40 +1,31 @@
 ---
-import { formatDate } from '@/utils/data.util';
-import Tags from './Tags.astro';
-interface Props {
-	post: any;
-}
+import { formatDate } from "@/utils/data.util";
+import Tags from "./Tags.astro";
 
 const { post } = Astro.props;
 ---
 
 <a href={post.url}>
-	<div
-		class="h-full rounded-2xl bg-stone-200/50 from-orange-900 via-amber-700 to-white p-[1px] text-sm dark:bg-gray-900"
-	>
-		<div
-			class="flex h-full w-full
-		flex-col
-    rounded-[1rem]
-		bg-white
-		p-4
-		text-gray-900
-    opacity-90
-    dark:bg-stone-800
-		dark:text-white"
-		>
-			<div class="flex-auto">
-				<div class="flex justify-between pb-4 text-xs">
-					<p>{formatDate(post.frontmatter.pubDate)}</p>
-					<p>{post.frontmatter.minutesRead}</p>
-				</div>
-
-				<p class="pb-4 text-lg font-bold">{post.frontmatter.title}</p>
-
-				<Tags tags={post.frontmatter.tags} />
-				<p class="line-clamp-6 pt-4">{post.frontmatter.excerpt}</p>
-			</div>
-			<p class="pt-4 underline">read more →</p>
-		</div>
-	</div>
+  <div
+    class="flex h-full w-full flex-col rounded-[1rem] bg-[#e8e0f0] dark:bg-[#3c2f4e] p-10 transition-transform duration-200 hover:-translate-y-1 hover:shadow-lg"
+  >
+    <div class="flex-auto">
+      <div
+        class="flex justify-between pb-4 text-xs text-[#8a7aa0] dark:text-[#9888b0]"
+      >
+        <p>{formatDate(post.frontmatter.pubDate)}</p>
+        <p>{post.frontmatter.minutesRead}</p>
+      </div>
+      <p class="pb-4 text-lg font-bold text-[#4a2d8a] dark:text-[#c9a8ff]">
+        {post.frontmatter.title}
+      </p>
+      <p class="line-clamp-6">{post.frontmatter.excerpt}</p>
+    </div>
+    <div
+      class="flex flex-col gap-2 sm:flex-row sm:justify-between sm:items-center gap-y-4"
+    >
+      <p class="underline text-[#6b3fc0] dark:text-[#b090f0]">read more →</p>
+      <Tags tags={post.frontmatter.tags} withHref={false} />
+    </div>
+  </div>
 </a>

@@ -3,8 +3,8 @@ import tailwind from '@astrojs/tailwind';
 import { remarkReadingTime } from './src/utils/readingTime';
 import rehypePrettyCode from 'rehype-pretty-code';
 import vercelStatic from '@astrojs/vercel';
-import react from '@astrojs/react';
 import sitemap from "@astrojs/sitemap";
+import path from 'node:path';
 
 const options = {
   // Specify the theme to use or a custom theme json, in our case
@@ -38,11 +38,18 @@ export default defineConfig({
     rehypePlugins: [[rehypePrettyCode, options]],
     remarkPlugins: [remarkReadingTime]
   },
-  integrations: [tailwind(), react(), sitemap()],
+  integrations: [tailwind(), sitemap()],
   output: 'static',
   adapter: vercelStatic({
     webAnalytics: {
       enabled: true
     }
-  })
+  }),
+  vite: {
+    resolve: {
+      alias: {
+        '@': path.resolve('./src'),
+      },
+    },
+  },
 });

@@ -1,8 +1,9 @@
 ---
-import { AppConfig } from '@/utils/AppConfig';
-import Base from '@/layouts/Base.astro';
-import PostHeader from '@/components/PostHeader.astro';
-import PostContent from '@/components/PostContent.astro';
+import { AppConfig } from "@/utils/AppConfig";
+import Base from "@/layouts/Base.astro";
+import PostHeader from "@/components/PostHeader.astro";
+import PostContent from "@/components/PostContent.astro";
+import Section from "@/components/Section.astro";
 
 const { description } = AppConfig;
 
@@ -10,16 +11,18 @@ const { frontmatter } = Astro.props;
 ---
 
 <Base head={{ title: frontmatter.title, description }}>
-	<div class="mx-auto w-full max-w-screen-md">
-		<PostHeader
-			title={frontmatter.title}
-			author={frontmatter.author}
-			tags={frontmatter.tags}
-			minutesRead={frontmatter.minutesRead}
-			pubDate={frontmatter.pubDate}
-			img={{ src: frontmatter.image.src, alt: frontmatter.image.alt }}
-		/>
-		<PostContent><slot /></PostContent>
-	</div>
+  <Section title={frontmatter.title}>
+    <div
+      class="bg-[#e8e0f0] dark:bg-[#3c2f4e] py-20 px-10 mx-auto w-full max-w-screen-lg flex h-full flex-col rounded-[1rem] tracking-wider leading-10"
+    >
+      <PostHeader
+        title={frontmatter.title}
+        author={frontmatter.author}
+        tags={frontmatter.tags}
+        minutesRead={frontmatter.minutesRead}
+        pubDate={frontmatter.pubDate}
+      />
+      <PostContent><slot /></PostContent>
+    </div>
+  </Section>
 </Base>
-

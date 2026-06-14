@@ -1,0 +1,30 @@
+---
+import { AppConfig } from "@/utils/AppConfig";
+import Base from "@/layouts/Base.astro";
+import ShortCard from "@/components/ShortCard.astro";
+import { sortPostsByDate } from "@/utils/data.util";
+import Section from "@/components/Section.astro";
+import Heading from "@/components/Heading.astro";
+
+const { title } = AppConfig;
+const { description } = AppConfig;
+
+const allPosts = await Astro.glob("./*_short.md");
+allPosts.sort(sortPostsByDate);
+---
+
+<Base head={{ title, description }}>
+  <Section title="Short Posts">
+    <Heading title={`${allPosts.length} quick thoughts`} />
+    {
+      allPosts.map((post) => {
+        const { Content, ...rest } = post;
+        return (
+          <div class="mb-4 basis-1 last:mb-0">
+            <ShortCard post={rest} Content={Content} />
+          </div>
+        );
+      })
+    }
+  </Section>
+</Base>

@@ -1,23 +1,30 @@
 ---
 import { AppConfig } from "@/utils/AppConfig";
 import Base from "@/layouts/Base.astro";
-import Section from "@/components/Section.astro";
 import Tags from "@/components/Tags.astro";
+import Section from "@/components/Section.astro";
 
 const { title } = AppConfig;
 const { description } = AppConfig;
 
 const allPosts = await Astro.glob("../posts/*.md");
-
 const allTags: Set<string> = new Set(
-	allPosts.map((post) => post.frontmatter.tags).flat(),
+  allPosts.map((post) => post.frontmatter.tags).flat(),
 );
 ---
 
 <Base head={{ title, description }}>
-	<Section>
-		<div class="mx-auto w-full max-w-screen-md">
-			<Tags tags={[...allTags]} withHref={true} />
-		</div>
-	</Section>
+  <Section title="Tags">
+    <div class="flex flex-col-reverse items-center sm:flex-row sm:justify-between">
+  <div class="w-full sm:w-auto">
+    <Tags tags={Array.from(allTags)} withHref={true} />
+  </div>
+  <div class="flex items-center justify-center md:w-1/2 sm:w-3/4 h-auto my-10">
+    <img
+      src="../../public/undraw_relaxed-reading_wfkr.svg"
+      alt="Hero Image"
+    />
+  </div>
+</div>
+  </Section>
 </Base>

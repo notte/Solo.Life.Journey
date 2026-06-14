@@ -1,21 +1,23 @@
 ---
 interface Props {
-	tags: string[];
-	withHref?: boolean;
+  tags: string[];
+  withHref?: boolean;
 }
 
 const { tags, withHref } = Astro.props;
 ---
 
 <div class="flex flex-wrap">
-	{
-		tags.map((tag: string) => {
-			const element = (
-				<span class="mb-2 mr-2 rounded-xl bg-stone-600 px-3 py-1 text-xs font-bold uppercase text-white hover:bg-stone-500">
-					#{tag}
-				</span>
-			);
-			return withHref ? <a href={`/tags/${tag}`}>{element}</a> : element;
-		})
-	}
+  {tags.map((tag) => (
+
+    withHref ?
+    <a
+      href={withHref ? `/tags/${tag}` : undefined}
+      class="md:text-sm sm:text-2xl font-medium rounded-full hover:text-[#7a6890] transition-colors duration-200 mr-4"
+    >
+      #{tag}
+    </a> : <span class="md:text-sm sm:text-2xl font-medium rounded-full hover:text-[#7a6890] transition-colors duration-200 mr-4">
+      #{tag}
+    </span>
+  ))}
 </div>
